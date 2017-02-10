@@ -18,12 +18,12 @@ def merge(leftA, rightA):
         ri+=1
     return results
 
-def mergeSort(array):
+def merge_sort(array):
     if len(array)<2:
         return array
     mid=len(array)//2
-    leftArray=mergeSort(array[:mid])
-    rightArray=mergeSort(array[mid:])
+    leftArray=merge_sort(array[:mid])
+    rightArray=merge_sort(array[mid:])
     results=merge(leftArray,rightArray)
 
     return results
@@ -32,7 +32,7 @@ def mergeSort(array):
 if __name__=="__main__":
     arr=[1,3,5,2,5,6,2,3,4,5,6]
     print(arr)
-    sortedArr=mergeSort(arr)
+    sortedArr=merge_sort(arr)
     print(sortedArr)
 
     

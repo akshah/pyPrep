@@ -1,16 +1,15 @@
-def shellSort(alist):
+def shell_sort(alist):
     sublistcount = len(alist)//2
     while sublistcount > 0:
 
       for startposition in range(sublistcount):
-        gapInsertionSort(alist,startposition,sublistcount)
+          gap_insertion_sort(alist,startposition,sublistcount)
 
-      print("After increments of size",sublistcount,\
-                                   "The list is",alist)
+      print("After increments of size ",sublistcount,", the list is",alist)
 
       sublistcount = sublistcount // 2
 
-def gapInsertionSort(alist,start,gap):
+def gap_insertion_sort(alist,start,gap):
     for i in range(start+gap,len(alist),gap):
 
         currentvalue = alist[i]
@@ -23,5 +22,5 @@ def gapInsertionSort(alist,start,gap):
         alist[position]=currentvalue
 
 alist = [54,26,93,17,77,31,44,55,20]
-shellSort(alist)
+shell_sort(alist)
 print(alist)
